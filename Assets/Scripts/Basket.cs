@@ -1,10 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Basket : MonoBehaviour {
+    public Text scoreGT;
 
 	// Use this for initialization
 	void Start () {
+        //Find a reference to the ScoreCounter GameObject 
+        GameObject scoreGO = GameObject.Find("ScoreCounter");
+        //Get the Text Component of that Game Object
+        scoreGT = scoreGO.GetComponent<Text>();
+        //Set the Starting number of the points to 0
+        scoreGT.text = "0";
+
 	
 	}
 	
@@ -20,6 +29,24 @@ public class Basket : MonoBehaviour {
         Vector3 pos = this.transform.position;
         pos.x = mousepos3D.x;
         this.transform.position = pos;
+
+    }
+
+    void OnCollisionEnter (Collision coll)  {
+        //Find out what hit this Basket 
+        GameObject collidedWith = coll.gameObject;
+        if (collidedWith.tag == "Apple" ) {
+            Destroy(collidedWith);
+            // convert the score back to a string and display it 
+            scoreGT.text = scoreGT.ToString();
+        }
+
+        //parse the text of the scoreGT into an int
+        int score = int.Parse(scoreGT.text);
+        //Add points for catching the apple
+        score += 100;
+        //Convert the score back to a string and display it 
+        scoreGT.text = score.ToString();
 
 
     }
