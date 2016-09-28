@@ -35,28 +35,31 @@ public       Text scoreGT;
     void OnCollisionEnter (Collision coll)  {
         //Find out what hit this Basket 
         GameObject collidedWith = coll.gameObject;
-        if (collidedWith.tag == "Apple" ) {
+        if (collidedWith.tag == "Apple")
+        {
             Destroy(collidedWith);
 
-       //Convert the score back to a string and display it 
-            scoreGT.text = score.ToString();
+           
+            {
+             
+            }
 
-      // Track the High Score 
+            //parse the text of the scoreGT into an int
+            int score = int.Parse ( scoreGT.text );
+            //Add points for catching the apple
+            score += 100;
+            //Convert the score back to a string and display it
+            scoreGT.text = score.ToString();
+            // Track the High Score 
             if (score > HighScore.score) {
                 HighScore.score = score;
             }
-            
+
+
+
+
+
         }
-
-        //parse the text of the scoreGT into an int
-        int score = int.Parse (scoreGT.text);
-        //Add points for catching the apple
-        score += 100;
-        
-       
-     
-
-
 
     }
 }
