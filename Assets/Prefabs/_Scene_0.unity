@@ -329,7 +329,6 @@ MonoBehaviour:
   numBaskets: 3
   basketBottomY: -14
   basketSpacingY: 2
-  basketList: []
 --- !u!1 &1067226010
 GameObject:
   m_ObjectHideFlags: 0
@@ -449,21 +448,6 @@ Prefab:
       propertyPath: applePrefab
       value: 
       objectReference: {fileID: 127358, guid: 041ad1f37ce1645dbaaba1027c4186ab, type: 2}
-    - target: {fileID: 114000013780444438, guid: d7f01940a165244a1b0ed8ac30262aad,
-        type: 2}
-      propertyPath: chanceToChangeDirections
-      value: 0.001
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013780444438, guid: d7f01940a165244a1b0ed8ac30262aad,
-        type: 2}
-      propertyPath: speed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000013780444438, guid: d7f01940a165244a1b0ed8ac30262aad,
-        type: 2}
-      propertyPath: leftAndRightEdge
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d7f01940a165244a1b0ed8ac30262aad, type: 2}
   m_IsPrefabParent: 0
